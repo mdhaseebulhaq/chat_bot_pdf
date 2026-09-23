@@ -64,7 +64,8 @@ def process_pdf(path):
     # )
 
     embeddings = OllamaEmbeddings(
-    model="nomic-embed-text")
+    model="nomic-embed-text",
+    base_url="http://host.docker.internal:11434")
 
     # -----------------------------
     # VECTOR STORE
@@ -158,7 +159,8 @@ def process_pdf(path):
 
     llm = ChatOllama(
     model="llama3.1:8b",
-    temperature=0
+    temperature=0,
+    base_url="http://host.docker.internal:11434"
     )
 
 
